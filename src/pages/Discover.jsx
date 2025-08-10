@@ -1,6 +1,6 @@
 import { genres } from "../assets/constants";
 import { Error, Loader, SongCard } from "../components";
-import { useGetTopChartsQuery } from "../redux/services/Deezer";
+import { useGetTopChartsQuery } from "../redux/services/deezer";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Discover() {

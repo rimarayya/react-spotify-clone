@@ -1,36 +1,65 @@
+import { Slider, Stack, Typography, IconButton } from "@mui/material";
+import { MdReplay5, MdForward5 } from "react-icons/md";
+
 const Seekbar = ({ value, min, max, onInput, setSeekTime, appTime }) => {
-  // converts the time to format 0:00
-  const getTime = (time) =>
+  const formatTime = (time) =>
     `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
 
   return (
-    <div className="hidden sm:flex flex-row items-center">
-      <button
-        type="button"
+    <Stack
+      direction="row"
+      alignItems="center"
+      spacing={2}
+      sx={{ width: { xs: 200, md: 500 }, color: "white" }}
+    >
+      {/* Skip backward 10s */}
+      <IconButton
         onClick={() => setSeekTime(appTime - 5)}
-        className="hidden lg:mr-4 lg:block text-white"
+        sx={{
+          color: "white",
+          "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+        }}
       >
-        -
-      </button>
-      <p className="text-white">{value === 0 ? "0:00" : getTime(value)}</p>
-      <input
-        type="range"
-        step="any"
+        <MdReplay5 size={28} />
+      </IconButton>
+
+      {/* Current time */}
+      <Typography variant="body2">
+        {value === 0 ? "0:00" : formatTime(value)}
+      </Typography>
+
+      {/* MUI Slider */}
+      <Slider
         value={value}
         min={min}
         max={max}
-        onInput={onInput}
-        className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
+        step={0.01}
+        onChange={(_, newValue) => onInput(newValue)}
+        sx={{
+          flexGrow: 1,
+          color: "#fff",
+          "& .MuiSlider-thumb": { backgroundColor: "#fff" },
+          "& .MuiSlider-track": { backgroundColor: "#fff" },
+          "& .MuiSlider-rail": { backgroundColor: "rgba(255,255,255,0.3)" },
+        }}
       />
-      <p className="text-white">{max === 0 ? "0:00" : getTime(max)}</p>
-      <button
-        type="button"
+
+      {/* Total duration */}
+      <Typography variant="body2">
+        {max === 0 ? "0:00" : formatTime(max)}
+      </Typography>
+
+      {/* Skip forward 5s */}
+      <IconButton
         onClick={() => setSeekTime(appTime + 5)}
-        className="hidden lg:ml-4 lg:block text-white"
+        sx={{
+          color: "white",
+          "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+        }}
       >
-        +
-      </button>
-    </div>
+        <MdForward5 size={28} />
+      </IconButton>
+    </Stack>
   );
 };
 

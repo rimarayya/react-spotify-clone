@@ -24,6 +24,10 @@ const MusicPlayer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setSeekTime(0);
+  }, [activeSong]);
+
+  useEffect(() => {
     if (currentSongs?.tracks?.data?.length) dispatch(playPause(true));
   }, [currentIndex]);
 
@@ -86,9 +90,9 @@ const MusicPlayer = () => {
         />
         <Seekbar
           value={appTime}
-          min="0"
+          min={0}
           max={duration}
-          onInput={(event) => setSeekTime(event.target.value)}
+          onInput={(val) => setSeekTime(val)}
           setSeekTime={setSeekTime}
           appTime={appTime}
         />
@@ -104,13 +108,7 @@ const MusicPlayer = () => {
           onLoadedData={(event) => setDuration(event.target.duration)}
         />
       </div>
-      <VolumeBar
-        value={volume}
-        min="0"
-        max="1"
-        onChange={(event) => setVolume(event.target.value)}
-        setVolume={setVolume}
-      />
+      <VolumeBar value={volume} onChange={(e) => setVolume(e.target.value)} />
     </div>
   );
 };

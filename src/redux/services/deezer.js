@@ -9,7 +9,10 @@ export const deezerApi = createApi({
     getTopCharts: builder.query({
       query: () => "/chart",
     }),
+    getAlbumDetails: builder.query({
+      query: ({ albumid }) => `/album/${albumid}`,
+    }),
   }),
 });
 
-export const { useGetTopChartsQuery } = deezerApi;
+export const { useGetTopChartsQuery, useGetAlbumDetailsQuery } = deezerApi;

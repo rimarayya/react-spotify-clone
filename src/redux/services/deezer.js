@@ -24,6 +24,9 @@ export const deezerApi = createApi({
     getSongsByCountry: builder.query({
       query: (countryCode) => `/editorial/${countryCode}/charts`,
     }),
+    getSongsBySearch: builder.query({
+      query: (searchTerm) => `/search?q=${searchTerm}`,
+    }),
   }),
 });
 
@@ -34,4 +37,5 @@ export const {
   useGetArtistTopTracksQuery,
   useGetArtistDetailsQuery,
   useGetSongsByCountryQuery,
+  useGetSongsBySearchQuery,
 } = deezerApi;

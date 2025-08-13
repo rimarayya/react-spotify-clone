@@ -1,20 +1,26 @@
 import { genres } from "../assets/constants";
 import { Error, Loader, SongCard } from "../components";
-import { useGetTopChartsQuery } from "../redux/services/deezer";
+import { selectGenreListId } from "../redux/features/playerSlice";
+import { useGetSongsByGenreQuery } from "../redux/services/deezer";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Discover() {
   const dispatch = useDispatch();
 
-  const { data, isFetching, error } = useGetTopChartsQuery();
-  const { activeSong, isPlaying } = useSelector((state) => state.player);
+  const { activeSong, isPlaying, genreListId } = useSelector(
+    (state) => state.player
+  );
 
-  const genreTitle = "Pop";
+  // const { data, isFetching, error } = useGetSongsByGenreQuery(
+  //   genreListId || 132
+  // );
+  const { data } = useGetSongsByGenreQuery(132);
+  console.log("rima", data);
+  // if (isFetching) return <Loader title="Loading songs..." />;
+  // if (error) return <Error />;
 
-  if (isFetching) return <Loader title="Loading songs..." />;
-
-  if (error) return <Error />;
-
+  const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
+  console.log("Selected Genre ID:", genreListId);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
@@ -23,8 +29,10 @@ export default function Discover() {
         </h2>
 
         <select
-          onChange={() => {}}
-          value=""
+          onChange={(e) => {
+            dispatch(selectGenreListId(Number(e.target.value)));
+          }}
+          value={genreListId || 132}
           className="bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         >
           {genres.map((genre) => (
@@ -36,9 +44,9 @@ export default function Discover() {
       </div>
 
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {data?.tracks?.data.map((song, i) => (
+        {data?.data?.map((song, i) => (
           <SongCard
-            key={song.key}
+            key={song.id}
             song={song}
             i={i}
             activeSong={activeSong}

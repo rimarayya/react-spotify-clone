@@ -9,6 +9,9 @@ export const deezerApi = createApi({
     getTopCharts: builder.query({
       query: () => "/chart",
     }),
+    getSongsByGenre: builder.query({
+      query: (genreId) => `/chart/${genreId}/tracks`,
+    }),
     getSongDetails: builder.query({
       query: ({ songid }) => `/track/${songid}`,
     }),
@@ -32,6 +35,7 @@ export const deezerApi = createApi({
 
 export const {
   useGetTopChartsQuery,
+  useGetSongsByGenreQuery,
   useGetSongDetailsQuery,
   useGetAlbumDetailsQuery,
   useGetArtistTopTracksQuery,

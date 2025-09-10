@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import PlayPause from "./PlayPause";
+import PlayPause from './PlayPause';
 
 const SongBar = ({
   song,
   i,
-  artistId,
   isPlaying,
   activeSong,
   handlePauseClick,
@@ -13,15 +12,15 @@ const SongBar = ({
 }) => (
   <div
     className={`w-full flex flex-row items-center hover:bg-[#4c426e] ${
-      activeSong?.id === song?.id ? "bg-[#4c426e]" : "bg-transparent"
+      activeSong?.id === song?.id ? 'bg-[#4c426e]' : 'bg-transparent'
     } py-2 p-4 rounded-lg cursor-pointer mb-2`}
   >
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
       <img
         className="w-20 h-20 rounded-lg"
-        src={song?.album?.cover_medium || song?.album?.cover || ""}
-        alt={song?.title || "song cover"}
+        src={song?.album?.cover_medium || song?.album?.cover || ''}
+        alt={song?.title || 'song cover'}
       />
       <div className="flex-1 flex flex-col justify-center mx-3">
         <Link to={`/songs/${song.id}`}>

@@ -1,26 +1,27 @@
-import { genres } from "../assets/constants";
-import { Error, Loader, SongCard } from "../components";
-import { selectGenreListId } from "../redux/features/playerSlice";
-import { useGetSongsByGenreQuery } from "../redux/services/deezer";
-import { useDispatch, useSelector } from "react-redux";
+/* eslint-disable no-console */
+import { useDispatch, useSelector } from 'react-redux';
+import { genres } from '../assets/constants';
+import { SongCard } from '../components';
+import { selectGenreListId } from '../redux/features/playerSlice';
+import { useGetSongsByGenreQuery } from '../redux/services/deezer';
 
 export default function Discover() {
   const dispatch = useDispatch();
 
   const { activeSong, isPlaying, genreListId } = useSelector(
-    (state) => state.player
+    (state) => state.player,
   );
 
   // const { data, isFetching, error } = useGetSongsByGenreQuery(
   //   genreListId || 132
   // );
   const { data } = useGetSongsByGenreQuery(132);
-  console.log("rima", data);
+  console.log('rima', data);
   // if (isFetching) return <Loader title="Loading songs..." />;
   // if (error) return <Error />;
 
   const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
-  console.log("Selected Genre ID:", genreListId);
+  console.log('Selected Genre ID:', genreListId);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">

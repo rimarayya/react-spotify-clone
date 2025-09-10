@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import { Error, Loader, SongCard } from "../components";
-import { useGetSongsBySearchQuery } from "../redux/services/deezer";
+import { Error, Loader, SongCard } from '../components';
+import { useGetSongsBySearchQuery } from '../redux/services/deezer';
 
 const Search = () => {
   const { searchTerm } = useParams();

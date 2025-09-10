@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
-import { Error, Loader, SongCard } from "../components";
-import { useGetTopChartsQuery } from "../redux/services/deezer";
+import { Error, Loader, SongCard } from '../components';
+import { useGetTopChartsQuery } from '../redux/services/deezer';
 
 const TopCharts = () => {
   const { isPlaying, activeSong } = useSelector((state) => state.player);

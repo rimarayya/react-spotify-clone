@@ -1,31 +1,31 @@
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
-import { setActiveSong, playPause } from "../redux/features/playerSlice";
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { DetailsHeader, Error, Loader, RelatedSongs } from '../components';
+import { setActiveSong, playPause } from '../redux/features/playerSlice';
 import {
   useGetSongDetailsQuery,
   useGetArtistTopTracksQuery,
-} from "../redux/services/deezer";
+} from '../redux/services/deezer';
 
 // Helper: format seconds into mm:ss
-const formatDuration = (seconds) => {
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
-};
+// const formatDuration = (seconds) => {
+//   const mins = Math.floor(seconds / 60);
+//   const secs = seconds % 60;
+//   return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+// };
 
 // Helper: generate structured fake lyrics (verse + chorus)
 const generateFakeLyrics = (title, artist) => {
   const verses = [
-    `Walking down the road, thinking of you\nUnder moonlit skies, we knew it was true`,
-    `Every step I take brings me back to that night\nYour voice in my head makes the darkness bright`,
-    `The city lights fade but our hearts still glow\nEvery beat in my chest lets the whole world know`,
+    'Walking down the road, thinking of you\nUnder moonlit skies, we knew it was true',
+    'Every step I take brings me back to that night\nYour voice in my head makes the darkness bright',
+    'The city lights fade but our hearts still glow\nEvery beat in my chest lets the whole world know',
   ];
 
   const chorus = `🎵 ${title}, oh ${artist}\nWe keep singing till the morning light\n${title}, oh ${artist}\nHold me close, never say goodbye 🎵`;
 
-  let fakeLyrics = [];
+  const fakeLyrics = [];
   fakeLyrics.push(verses[Math.floor(Math.random() * verses.length)]);
   fakeLyrics.push(chorus);
   fakeLyrics.push(verses[Math.floor(Math.random() * verses.length)]);
@@ -33,7 +33,7 @@ const generateFakeLyrics = (title, artist) => {
   fakeLyrics.push(verses[Math.floor(Math.random() * verses.length)]);
   fakeLyrics.push(chorus);
 
-  return fakeLyrics.join("\n\n");
+  return fakeLyrics.join('\n\n');
 };
 const SongDetails = () => {
   const dispatch = useDispatch();
@@ -54,7 +54,7 @@ const SongDetails = () => {
     error: relatedSongsError,
   } = useGetArtistTopTracksQuery(artistId);
 
-  const [lyrics, setLyrics] = useState("");
+  const [lyrics, setLyrics] = useState('');
 
   useEffect(() => {
     if (songData?.artist?.name && songData?.title) {
@@ -71,8 +71,7 @@ const SongDetails = () => {
     dispatch(playPause(false));
   };
 
-  if (isFetchingSongDetails || isFetchingRelatedSongs)
-    return <Loader title="Loading song details..." />;
+  if (isFetchingSongDetails || isFetchingRelatedSongs) return <Loader title="Loading song details..." />;
   if (songError || relatedSongsError) return <Error />;
 
   return (
@@ -87,7 +86,7 @@ const SongDetails = () => {
         </h2>
         <div
           className="text-gray-300 text-base leading-relaxed whitespace-pre-line max-w-3xl"
-          style={{ whiteSpace: "pre-line" }}
+          style={{ whiteSpace: 'pre-line' }}
         >
           {lyrics}
         </div>

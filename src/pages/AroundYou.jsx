@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 
-import { Error, Loader, SongCard } from "../components";
-import { useGetSongsByCountryQuery } from "../redux/services/deezer";
+import { Error, Loader, SongCard } from '../components';
+import { useGetSongsByCountryQuery } from '../redux/services/deezer';
 
 const AroundYou = () => {
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState('');
   const [loading, setLoading] = useState(true);
   const { isPlaying, activeSong } = useSelector((state) => state.player);
 
@@ -15,12 +15,13 @@ const AroundYou = () => {
   useEffect(() => {
     axios
       .get(
-        `https://geo.ipify.org/api/v2/country?apiKey=at_wohuGJMp6mc5PYpe3THVgaFrdXkhf`
+        'https://geo.ipify.org/api/v2/country?apiKey=at_wohuGJMp6mc5PYpe3THVgaFrdXkhf',
       )
       .then((res) => {
         setCountry(res?.data?.location?.country);
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err);
       })
       .finally(() => {

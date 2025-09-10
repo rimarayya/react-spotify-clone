@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
-import { useGetAlbumDetailsQuery } from "../redux/services/deezer";
-import { Loader } from "../components";
+import { Link } from 'react-router-dom';
+import { useGetAlbumDetailsQuery } from '../redux/services/deezer';
+import Loader from './Loader';
 
 const DetailsHeader = ({ artistId, artistData, songData, topTrack }) => {
   const artist = artistData?.artist || artistData || songData?.artist;
 
   const albumId = songData?.album?.id || topTrack?.album?.id;
-  const { data: albumData, isFetching: isFetchingAlbum } =
-    useGetAlbumDetailsQuery({ albumid: albumId }, { skip: !albumId });
+  const { data: albumData, isFetching: isFetchingAlbum } = useGetAlbumDetailsQuery({ albumid: albumId }, { skip: !albumId });
 
-  const genreName =
-    albumData?.genres?.data?.[0]?.name ||
-    topTrack?.album?.genre?.name ||
-    "Unknown Genre";
+  const genreName = albumData?.genres?.data?.[0]?.name
+    || topTrack?.album?.genre?.name
+    || 'Unknown Genre';
 
   if (isFetchingAlbum) return <Loader title="Loading album details..." />;
   return (
@@ -32,7 +30,7 @@ const DetailsHeader = ({ artistId, artistData, songData, topTrack }) => {
           )}
           <Link to={`/artists/${artist?.id}`}>
             <p className="text-base text-gray-400 mt-2">
-              {artist?.name || "Unknown Artist"}
+              {artist?.name || 'Unknown Artist'}
             </p>
           </Link>
           <p className="text-base text-gray-400 mt-2">{genreName}</p>

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
 const Player = ({
   activeSong,
@@ -36,6 +36,7 @@ const Player = ({
   }, [seekTime]);
 
   return (
+    // eslint-disable-next-line jsx-a11y/media-has-caption
     <audio
       src={activeSong?.preview}
       ref={ref}

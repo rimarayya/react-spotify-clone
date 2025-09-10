@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { DetailsHeader, Error, Loader, RelatedSongs } from '../components';
 import {
   useGetArtistDetailsQuery,
   useGetArtistTopTracksQuery,
-} from "../redux/services/deezer";
+} from '../redux/services/deezer';
 
 const ArtistDetails = () => {
   const { id: artistId } = useParams();
@@ -22,8 +22,7 @@ const ArtistDetails = () => {
     error: artistTopTracksError,
   } = useGetArtistTopTracksQuery(artistId);
 
-  if (isFetchingArtistDetails || isFetchingArtistTopTracks)
-    return <Loader title="Loading artist details..." />;
+  if (isFetchingArtistDetails || isFetchingArtistTopTracks) return <Loader title="Loading artist details..." />;
 
   if (artistError || artistTopTracksError) return <Error />;
 

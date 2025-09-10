@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import PlayPause from "./PlayPause";
-import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import PlayPause from './PlayPause';
+import { playPause, setActiveSong } from '../redux/features/playerSlice';
 
 const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
   const dispatch = useDispatch();
@@ -22,8 +22,8 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
         <div
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${
             activeSong?.id === song.id
-              ? "flex bg-black bg-opacity-70"
-              : "hidden"
+              ? 'flex bg-black bg-opacity-70'
+              : 'hidden'
           }`}
         >
           <PlayPause
@@ -37,9 +37,9 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
         <img
           alt="song_img"
           src={
-            song?.album?.cover_medium ||
-            song?.album?.cover ||
-            "/placeholder.jpg"
+            song?.album?.cover_medium
+            || song?.album?.cover
+            || '/placeholder.jpg'
           }
           className="w-full h-full object-cover rounded-lg"
         />

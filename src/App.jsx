@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+/* eslint-disable import/no-named-as-default, import/no-named-as-default-member */
+import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 
-import { Searchbar, Sidebar, MusicPlayer, TopPlay } from "./components";
+import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import {
   ArtistDetails,
   TopArtists,
@@ -10,8 +11,8 @@ import {
   Search,
   SongDetails,
   TopCharts,
-} from "./pages";
-import TestProxy from "./TestProxy";
+} from './pages';
+import TestProxy from './TestProxy';
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);

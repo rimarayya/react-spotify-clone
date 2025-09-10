@@ -1,10 +1,9 @@
-import { logo } from "../assets";
-import { links } from "../assets/constants";
-
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { RiCloseLine } from "react-icons/ri";
-import { HiOutlineMenu } from "react-icons/hi";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { RiCloseLine } from 'react-icons/ri';
+import { HiOutlineMenu } from 'react-icons/hi';
+import { links } from '../assets/constants';
+import { logo } from '../assets';
 
 const NavLinks = ({ handelClick }) => (
   <div className="mt-10">
@@ -14,7 +13,7 @@ const NavLinks = ({ handelClick }) => (
         to={item.to}
         className="flex flex-row justify-start item-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400 "
         onClick={() => {
-          handelClick && handelClick();
+          if (handelClick) handelClick();
         }}
       >
         <item.icon className="w-6 h-6 mr-2" />
@@ -50,7 +49,7 @@ const Sidebar = () => {
 
       <div
         className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-white/10 to-[#483d8b] backdrop-blur-lg z-10 p-6 md:hidden transition-transform duration-300 ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />

@@ -1,11 +1,11 @@
-import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
 import {
   BsArrowRepeat,
   BsFillPauseFill,
   BsFillPlayFill,
   BsShuffle,
-} from "react-icons/bs";
-import { IconButton, Tooltip, Stack } from "@mui/material";
+} from 'react-icons/bs';
+import { IconButton, Tooltip, Stack } from '@mui/material';
 
 const Controls = ({
   isPlaying,
@@ -26,18 +26,18 @@ const Controls = ({
       spacing={3}
       alignItems="center"
       justifyContent="center"
-      sx={{ width: { xs: "100%", md: 400 } }}
+      sx={{ width: { xs: '100%', md: 400 } }}
     >
       <Tooltip title="Repeat">
         <IconButton
           onClick={() => setRepeat((prev) => !prev)}
           sx={{
-            color: repeat ? "red" : "white",
-            "&:hover": {
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-              color: "red",
+            color: repeat ? 'red' : 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 0, 0, 0.2)',
+              color: 'red',
             },
-            display: { xs: "none", sm: "inline-flex" },
+            display: { xs: 'none', sm: 'inline-flex' },
           }}
           aria-label="Repeat"
         >
@@ -50,8 +50,8 @@ const Controls = ({
           <IconButton
             onClick={handlePrevSong}
             sx={{
-              color: "white",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+              color: 'white',
+              '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' },
             }}
             aria-label="Previous"
           >
@@ -60,13 +60,13 @@ const Controls = ({
         </Tooltip>
       )}
 
-      <Tooltip title={isPlaying ? "Pause" : "Play"}>
+      <Tooltip title={isPlaying ? 'Pause' : 'Play'}>
         <IconButton
           onClick={handlePlayPause}
-          aria-label={isPlaying ? "Pause" : "Play"}
+          aria-label={isPlaying ? 'Pause' : 'Play'}
           sx={{
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
-            "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.6)" },
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.6)' },
             width: 55,
             height: 55,
           }}
@@ -84,8 +84,8 @@ const Controls = ({
           <IconButton
             onClick={handleNextSong}
             sx={{
-              color: "white",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+              color: 'white',
+              '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' },
             }}
             aria-label="Next"
           >
@@ -98,12 +98,12 @@ const Controls = ({
         <IconButton
           onClick={() => setShuffle((prev) => !prev)}
           sx={{
-            color: shuffle ? "red" : "white",
-            "&:hover": {
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-              color: "red",
+            color: shuffle ? 'red' : 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 0, 0, 0.2)',
+              color: 'red',
             },
-            display: { xs: "none", sm: "inline-flex" },
+            display: { xs: 'none', sm: 'inline-flex' },
           }}
           aria-label="Shuffle"
         >

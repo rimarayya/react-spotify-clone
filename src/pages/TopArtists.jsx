@@ -1,5 +1,5 @@
-import { ArtistCard, Error, Loader } from "../components";
-import { useGetTopChartsQuery } from "../redux/services/deezer";
+import { ArtistCard, Error, Loader } from '../components';
+import { useGetTopChartsQuery } from '../redux/services/deezer';
 
 const TopArtists = () => {
   const { data, isFetching, error } = useGetTopChartsQuery();
@@ -14,7 +14,7 @@ const TopArtists = () => {
       </h2>
 
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {data?.tracks?.data?.map((track, i) => (
+        {data?.tracks?.data?.map((track) => (
           <ArtistCard key={track.i} track={track} />
         ))}
       </div>

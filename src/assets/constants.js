@@ -1,20 +1,25 @@
-import { HiOutlineHashtag, HiOutlineHome, HiOutlinePhotograph, HiOutlineUserGroup } from 'react-icons/hi';
+import {
+  HiOutlineHashtag,
+  HiOutlineHome,
+  HiOutlinePhotograph,
+  HiOutlineUserGroup,
+} from 'react-icons/hi';
 
 export const genres = [
-  { title: 'Pop', value: 'POP' },
-  { title: 'Hip-Hop', value: 'HIP_HOP_RAP' },
-  { title: 'Dance', value: 'DANCE' },
-  { title: 'Electronic', value: 'ELECTRONIC' },
-  { title: 'Soul', value: 'SOUL_RNB' },
-  { title: 'Alternative', value: 'ALTERNATIVE' },
-  { title: 'Rock', value: 'ROCK' },
-  { title: 'Latin', value: 'LATIN' },
-  { title: 'Film', value: 'FILM_TV' },
-  { title: 'Country', value: 'COUNTRY' },
-  { title: 'Worldwide', value: 'WORLDWIDE' },
-  { title: 'Reggae', value: 'REGGAE_DANCE_HALL' },
-  { title: 'House', value: 'HOUSE' },
-  { title: 'K-Pop', value: 'K_POP' },
+  { title: 'Pop', value: 132 },
+  { title: 'Hip-Hop', value: 116 },
+  { title: 'Dance', value: 113 },
+  { title: 'Electronic', value: 106 },
+  { title: 'Soul', value: 152 },
+  { title: 'Alternative', value: 85 },
+  { title: 'Rock', value: 152 },
+  { title: 'Latin', value: 125 },
+  { title: 'Film', value: 324 },
+  { title: 'Country', value: 6 },
+  { title: 'Worldwide', value: 0 },
+  { title: 'Reggae', value: 113 },
+  { title: 'House', value: 113 },
+  { title: 'K-Pop', value: 135 },
 ];
 
 export const links = [

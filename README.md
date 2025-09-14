@@ -81,9 +81,9 @@ lyriks/
 
 ## 🖼️ Screenshots
 
-| Discover Page                             | Artist Details                        | Lyrics View                           |
-| ----------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Discover](src/screenshots/Discover.png) | ![Artist](src/screenshots/Artist.png) | ![Lyrics](src/screenshots/lyrics.png) |
+| Discover Page                          | Artist Details                        | Lyrics View                           |
+| -------------------------------------- | ------------------------------------- | ------------------------------------- |
+| ![Discover](src/screenshots/image.png) | ![Artist](src/screenshots/Artist.png) | ![Lyrics](src/screenshots/lyrics.png) |
 
 ---
 

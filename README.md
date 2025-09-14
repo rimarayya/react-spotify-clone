@@ -31,28 +31,34 @@ It allows users to explore music, view top charts, search for songs, and display
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/lyriks.git
+   git clone https://gitlab.com/uni.rima.rayya/react-spotify-clone.git
+   ```
+
+2. **Move to the project file**
+
+   ```bash
    cd lyriks
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Fix CORS restriction (required step)**  
+4. **Fix CORS restriction (required step)**  
    Go to 👉 [CORS Anywhere Demo](https://cors-anywhere.herokuapp.com/corsdemo)  
    Click **"Request temporary access to the demo server"**.  
    This enables the app to fetch data correctly.
 
-4. **Run the development server**
+5. **Run the development server**
 
    ```bash
    npm run dev
    ```
 
-5. **Build for production**
+6. **Build for production**
+
    ```bash
    npm run build
    ```
@@ -73,14 +79,11 @@ lyriks/
 
 ---
 
-## 🖼️ Screenshots & Demo
+## 🖼️ Screenshots
 
-| Home Page                     | Song Details                  | Lyrics View                       |
-| ----------------------------- | ----------------------------- | --------------------------------- |
-| ![Home](screenshots/home.png) | ![Song](screenshots/song.png) | ![Lyrics](screenshots/lyrics.png) |
-
-👉 Place your screenshots inside a folder named **`screenshots/`** in the project root and update the file paths accordingly.  
-You can also add a **demo GIF** or **screen recording** for extra polish!
+| Discover Page                         | Artist Details                    | Lyrics View                       |
+| ------------------------------------- | --------------------------------- | --------------------------------- |
+| ![Discover](screenshots/Discover.png) | ![Artist](screenshots/Artist.png) | ![Lyrics](screenshots/lyrics.png) |
 
 ---
 

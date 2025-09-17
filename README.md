@@ -13,6 +13,8 @@ It allows users to explore music, view top charts, search for songs, and display
 - 📝 Fetch and display lyrics in real time
 - 🎨 Modern responsive UI with Tailwind CSS
 - ⚡️ Fast development with Vite
+- ✅ Clean commits with Husky + lint-staged
+- ✨ Consistent code formatting using ESLint + Prettier
 
 ---
 
@@ -22,6 +24,7 @@ It allows users to explore music, view top charts, search for songs, and display
 - [Vite](https://vitejs.dev/) – Fast build tool
 - [Tailwind CSS](https://tailwindcss.com/) – Styling
 - [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) – Code quality
+- [Husky](https://typicode.github.io/husky/) & [lint-staged](https://github.com/okonet/lint-staged) – Git hooks & staged file linting
 - External Music API (proxied with CORS Anywhere)
 
 ---
@@ -34,7 +37,7 @@ It allows users to explore music, view top charts, search for songs, and display
    git clone https://gitlab.com/uni.rima.rayya/react-spotify-clone.git
    ```
 
-2. **Move to the project file**
+2. **Move to the project directory**
 
    ```bash
    cd lyriks
@@ -46,18 +49,26 @@ It allows users to explore music, view top charts, search for songs, and display
    npm install
    ```
 
-4. **Fix CORS restriction (required step)**  
+4. **Enable Husky (required after install)**
+
+   ```bash
+   npm run prepare
+   ```
+
+   > This sets up Git hooks for pre-commit checks.
+
+5. **Fix CORS restriction (required step)**  
    Go to 👉 [CORS Anywhere Demo](https://cors-anywhere.herokuapp.com/corsdemo)  
    Click **"Request temporary access to the demo server"**.  
    This enables the app to fetch data correctly.
 
-5. **Run the development server**
+6. **Run the development server**
 
    ```bash
    npm run dev
    ```
 
-6. **Build for production**
+7. **Build for production**
 
    ```bash
    npm run build
@@ -73,8 +84,13 @@ lyriks/
 │── package.json
 │── vite.config.js
 │── tailwind.config.js
-│── src/       # React components and pages
-│── public/    # Static assets
+│── .eslintrc.js
+│── .prettierrc
+│── .eslintignore
+│── .prettierignore
+│── src/         # React components and pages
+│── public/      # Static assets
+│── .husky/      # Git hooks
 ```
 
 ---
@@ -96,4 +112,9 @@ Users must manually request access through the [CORS Anywhere Demo](https://cors
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
+Contributions are welcome!
+
+- Fork the repo
+- Create a feature branch
+- Run `npm run lint` and `npm run format` before committing
+- Submit a pull request 🚀

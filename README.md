@@ -33,9 +33,9 @@ It allows users to explore music, view top charts, search for songs, and display
 
 1. **Clone the repository**
 
-   ```bash
-   git clone https://gitlab.com/uni.rima.rayya/react-spotify-clone.git
-   ```
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/rimarayya/react-spotify-clone)
+[![GitLab](https://img.shields.io/badge/GitLab-Repository-orange?logo=gitlab)](https://gitlab.com/uni.rima.rayya/react-spotify-clone)
+
 
 2. **Move to the project directory**
 

@@ -40,7 +40,7 @@ It allows users to explore music, view top charts, search for songs, and display
 2. **Move to the project directory**
 
    ```bash
-   cd lyriks
+   cd react-spotify-clone
    ```
 
 3. **Install dependencies**

@@ -3,7 +3,6 @@
 Lyriks is a **music streaming and lyrics web application** built with **React, Vite, and Tailwind CSS**.  
 It allows users to explore music, view top charts, search for songs, and display lyrics in a clean, responsive UI.
 
----
 
 ## 🚀 Features
 
@@ -16,7 +15,6 @@ It allows users to explore music, view top charts, search for songs, and display
 - ✅ Clean commits with Husky + lint-staged
 - ✨ Consistent code formatting using ESLint + Prettier
 
----
 
 ## 🛠️ Tech Stack
 
@@ -27,7 +25,6 @@ It allows users to explore music, view top charts, search for songs, and display
 - [Husky](https://typicode.github.io/husky/) & [lint-staged](https://github.com/okonet/lint-staged) – Git hooks & staged file linting
 - External Music API (proxied with CORS Anywhere)
 
----
 
 ## ⚙️ Installation & Setup
 
@@ -74,7 +71,6 @@ It allows users to explore music, view top charts, search for songs, and display
    npm run build
    ```
 
----
 
 ## 📦 Project Structure
 
@@ -93,7 +89,6 @@ lyriks/
 │── .husky/      # Git hooks
 ```
 
----
 
 ## 🖼️ Screenshots
 
@@ -101,14 +96,12 @@ lyriks/
 | -------------------------------------- | ------------------------------------- | ------------------------------------- |
 | ![Discover](src/screenshots/image.png) | ![Artist](src/screenshots/Artist.png) | ![Lyrics](src/screenshots/lyrics.png) |
 
----
 
 ## ⚠️ Deployment Note
 
 This project **cannot be deployed directly** due to CORS limitations.  
 Users must manually request access through the [CORS Anywhere Demo](https://cors-anywhere.herokuapp.com/corsdemo) before using the app.
 
----
 
 ## 🤝 Contributing
 
